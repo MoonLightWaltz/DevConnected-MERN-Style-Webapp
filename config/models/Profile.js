@@ -93,8 +93,8 @@ const ProfileSchema = new mongoose.Schema({
     youtube: {
       type: String,
     },
-    X: {
-      tpye: String,
+    twitter: {
+      type: String,
     },
     facebook: {
       type: String,
