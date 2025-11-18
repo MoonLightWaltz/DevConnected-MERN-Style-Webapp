@@ -1,4 +1,4 @@
 {
-  "mongoURI": "mongodb+srv://Lee18862:Ilikepie0@mern.lngpxwj.mongodb.net/?appName=MERN",
+  "mongoURI": "mongodb+srv://Lee18862:hSr7sVo9Fr1QQBCg@mern.lngpxwj.mongodb.net/?appName=MERN",
   "jwtSecret": "myscecrettoken"
 }
