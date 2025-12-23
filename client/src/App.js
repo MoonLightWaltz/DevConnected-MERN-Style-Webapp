@@ -1,0 +1,15 @@
+import "./App.css";
+import React from "react";
+import Navbar from "./Components/Layout/Navbar";
+import Landing from "./Components/Layout/Landing";
+
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Landing />
+    </>
+  );
+};
+
+export default App;
