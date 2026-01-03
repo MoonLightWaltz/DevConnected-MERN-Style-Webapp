@@ -5,37 +5,42 @@ import Landing from "./Components/Layout/Landing";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/Layout/auth/Login";
 import Register from "./Components/Layout/auth/Register";
+//Redux
+import { Provider } from "react-redux";
+import store from "./store";
 
 const App = () => {
   return (
-    <>
-      {" "}
-      <Router>
-        <Navbar />
+    <Provider store={store}>
+      <>
+        {" "}
+        <Router>
+          <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Landing />} />
+          <Routes>
+            <Route path="/" element={<Landing />} />
 
-          <Route
-            path="/register"
-            element={
-              <section className="container">
-                <Register />
-              </section>
-            }
-          />
+            <Route
+              path="/register"
+              element={
+                <section className="container">
+                  <Register />
+                </section>
+              }
+            />
 
-          <Route
-            path="/login"
-            element={
-              <section className="container">
-                <Login />
-              </section>
-            }
-          />
-        </Routes>
-      </Router>
-    </>
+            <Route
+              path="/login"
+              element={
+                <section className="container">
+                  <Login />
+                </section>
+              }
+            />
+          </Routes>
+        </Router>
+      </>
+    </Provider>
   );
 };
 
