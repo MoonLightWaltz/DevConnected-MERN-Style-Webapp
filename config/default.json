@@ -1,6 +1,0 @@
-{
-  "mongoURI": "mongodb+srv://Lee18862:17f9OfHaI15zkQ9f@mern.lngpxwj.mongodb.net/?appName=MERN",
-  "jwtSecret": "myscecrettoken",
-  "githubClientId": "Ov23li9j4YKqtJ9lV695",
-  "githubSecret": "0c826d8896b0241f34f44f8096a49867ae55b3df"
-}
