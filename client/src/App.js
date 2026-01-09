@@ -1,4 +1,5 @@
 import "./App.css";
+import { useEffect } from "react";
 import React from "react";
 import Navbar from "./Components/Layout/Navbar";
 import Landing from "./Components/Layout/Landing";
@@ -9,8 +10,18 @@ import Alert from "./Components/Layout/Alert";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
+import setAuthToken from "./utils/setAuthToken";
+import { loadUser } from "./action/auth";
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+
   return (
     <Provider store={store}>
       <>
