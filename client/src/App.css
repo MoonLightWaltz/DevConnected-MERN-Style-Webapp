@@ -488,6 +488,12 @@ button {
   margin-bottom: 0.5rem;
 }
 
+@media (max-with: 1200px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -495,6 +501,10 @@ button {
   }
 
   .hide-sm {
+    display: none;
+  }
+
+  .hide {
     display: none;
   }
 
