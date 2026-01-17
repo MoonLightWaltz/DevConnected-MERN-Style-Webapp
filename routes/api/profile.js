@@ -17,7 +17,7 @@ router.get("/me", auth, async (req, res) => {
   try {
     const profile = await Profile.findOne({ user: req.user.id }).populate(
       "user",
-      ["name", "avatar"]
+      ["name", "avatar"],
     );
 
     if (!profile) {
@@ -26,7 +26,7 @@ router.get("/me", auth, async (req, res) => {
     res.json(profile);
   } catch (err) {
     console.error(err.message);
-    res.status(500).send({ msg: "No token, authorization denied" });
+    res.status(500).send({ msg: "Server Error" });
   }
 });
 
@@ -92,7 +92,7 @@ router.post(
         profile = await Profile.findOneAndUpdate(
           { user: req.user.id },
           { $set: profileFields },
-          { new: true }
+          { new: true },
         );
 
         return res.json(profile);
@@ -108,7 +108,7 @@ router.post(
       console.error(err.message);
       res.status(500).send("Server Error");
     }
-  }
+  },
 );
 
 // @route   GET api/profile
@@ -212,7 +212,7 @@ router.put(
       console.error(err.message);
       res.status(500).send("Server Error");
     }
-  }
+  },
 );
 
 // @route   DELETE api/experience
@@ -285,7 +285,7 @@ router.put(
       console.error(err.message);
       res.status(500).send("Server Error");
     }
-  }
+  },
 );
 
 // @route   DELETE api/experience
@@ -322,7 +322,7 @@ router.get("/github/:username", (req, res) => {
       uri: `https://api.github.com/users/${
         req.params.username
       }/repos?per_page=5&sort=created:asc&client_id=${config.get(
-        "githubClientId"
+        "githubClientId",
       )}&client_secret=${config.get("githubSecret")}`,
       method: "GET",
       headers: { "user-agent": "node.js" },
