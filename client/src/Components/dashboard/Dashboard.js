@@ -26,10 +26,12 @@ const Dashboard = ({
         <>has</>
       ) : (
         <>
-          You have not yet setup a profile, please add some info
-          <Link to="/create-profile" className="btn btn-primary my-1">
-            Create Profile
-          </Link>
+          You have not yet setup a profile, please add some info here:
+          <section>
+            <Link to="/create-profile" className="btn btn-primary my-1">
+              Create Profile
+            </Link>
+          </section>
         </>
       )}
     </>

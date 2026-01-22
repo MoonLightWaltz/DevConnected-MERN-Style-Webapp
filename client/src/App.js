@@ -9,6 +9,7 @@ import Register from "./Components/Layout/auth/Register";
 import Alert from "./Components/Layout/Alert";
 import Dashboard from "./Components/dashboard/Dashboard";
 import PrivateRoute from "./Components/routing/PrivateRoute";
+import Createprofile from "./Components/profile-form.js/Createprofile";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -45,16 +46,6 @@ const App = () => {
             />
 
             <Route
-              exact
-              path="/dashboard"
-              element={
-                <section className="container">
-                  <Dashboard />
-                </section>
-              }
-            />
-
-            <Route
               path="/login"
               element={
                 <section className="container">
@@ -62,6 +53,27 @@ const App = () => {
                 </section>
               }
             />
+
+            {/* 🔒 PRIVATE ROUTES */}
+            <Route element={<PrivateRoute />}>
+              <Route
+                path="/dashboard"
+                element={
+                  <section className="container">
+                    <Dashboard />
+                  </section>
+                }
+              />
+
+              <Route
+                path="/create-profile"
+                element={
+                  <section className="container">
+                    <Createprofile />
+                  </section>
+                }
+              />
+            </Route>
           </Routes>
         </Router>
       </>
