@@ -54,7 +54,7 @@ const App = () => {
               }
             />
 
-            {/* 🔒 PRIVATE ROUTES */}
+            {/* PRIVATE ROUTES */}
             <Route element={<PrivateRoute />}>
               <Route
                 path="/dashboard"
