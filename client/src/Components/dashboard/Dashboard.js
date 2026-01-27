@@ -5,6 +5,7 @@ import { getCurrentProfile } from "../../action/profile";
 import { useEffect } from "react";
 import Spinner from "../Layout/Spinner";
 import { Link } from "react-router-dom";
+import DashboardActions from "./DashboardActions";
 
 const Dashboard = ({
   getCurrentProfile,
@@ -23,7 +24,9 @@ const Dashboard = ({
         <i className="fas fa-user"></i> Welcome {user && user.name}
       </p>
       {profile !== null ? (
-        <>has</>
+        <>
+          <DashboardActions />
+        </>
       ) : (
         <>
           You have not yet setup a profile, please add some info here:

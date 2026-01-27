@@ -10,6 +10,7 @@ import Alert from "./Components/Layout/Alert";
 import Dashboard from "./Components/dashboard/Dashboard";
 import PrivateRoute from "./Components/routing/PrivateRoute";
 import Createprofile from "./Components/profile-form.js/Createprofile";
+import Editprofile from "./Components/profile-form.js/Editprofile";
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -70,6 +71,14 @@ const App = () => {
                 element={
                   <section className="container">
                     <Createprofile />
+                  </section>
+                }
+              />
+              <Route
+                path="/edit-profile"
+                element={
+                  <section className="container">
+                    <Editprofile />
                   </section>
                 }
               />
