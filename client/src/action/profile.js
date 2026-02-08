@@ -205,7 +205,7 @@ export const deleteExperience = (id) => async (dispatch) => {
 
     dispatch(setAlert("Experience Removed", "success"));
   } catch (err) {
-    const errors = err.response.data.errors;
+    // const error = err.response.data.errors;
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
@@ -226,7 +226,7 @@ export const deleteEducation = (id) => async (dispatch) => {
 
     dispatch(setAlert("Education Removed", "success"));
   } catch (err) {
-    const errors = err.response.data.errors;
+    // const errors = err.response.data.errors;
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
@@ -239,7 +239,7 @@ export const deleteEducation = (id) => async (dispatch) => {
 export const deleteAccount = () => async (dispatch) => {
   if (window.confirm("Are you sure? This can NOT be undone")) {
     try {
-      const res = await axios.delete(`/api/profile`);
+      await axios.delete(`/api/profile`);
 
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });

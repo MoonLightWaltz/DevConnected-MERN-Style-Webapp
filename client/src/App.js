@@ -14,6 +14,8 @@ import Editprofile from "./Components/profile-form.js/Editprofile";
 import AddExpierence from "./Components/profile-form.js/AddExpierence";
 import AddEducation from "./Components/profile-form.js/AddEducation";
 import Profiles from "./Components/profiles/Profiles";
+import Profile from "./Components/profile/Profile";
+
 //Redux
 import { Provider } from "react-redux";
 import store from "./store";
@@ -63,6 +65,15 @@ const App = () => {
               element={
                 <section className="container">
                   <Profiles />
+                </section>
+              }
+            />
+
+            <Route
+              path="/profile/:id"
+              element={
+                <section className="container">
+                  <Profile />
                 </section>
               }
             />

@@ -37,7 +37,7 @@ router.post(
       console.error(err.message);
       res.status(500).send("Server Error");
     }
-  }
+  },
 );
 
 // @route   GET api/posts
@@ -199,7 +199,7 @@ router.post(
       console.error(err.message);
       res.status(500).send("Server Error");
     }
-  }
+  },
 );
 
 // @route   DELETE api/posts/comment/:id/comment_id
@@ -212,7 +212,7 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
 
     //Pull out comment from post
     const comment = post.comments.find(
-      (comment) => comment.id === req.params.comment_id
+      (comment) => comment.id === req.params.comment_id,
     );
     //Make sure comment exists
     if (!comment) {
