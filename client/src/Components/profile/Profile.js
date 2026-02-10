@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
+import ProfileExperience from "./ProfileExperience";
+import ProfileEducation from "./ProfileEducation";
 
 const Profile = ({ getProfilesByID, profile: { profile, loading }, auth }) => {
   const { id } = useParams();
@@ -33,6 +35,37 @@ const Profile = ({ getProfilesByID, profile: { profile, loading }, auth }) => {
           <div class="profile-grid my-1">
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
+            <div className="profile-exp bg-white p-2">
+              <h2 className="text-primary">Experience</h2>
+              {profile.experience.length > 0 ? (
+                <>
+                  {profile.experience.map((experience) => (
+                    <ProfileExperience
+                      key={experience._id}
+                      expereince={experience}
+                    />
+                  ))}
+                </>
+              ) : (
+                <h4>No experience credentials</h4>
+              )}
+            </div>
+
+            <div className="profile-edu bg-white p-2">
+              <h2 className="text-primary">Education</h2>
+              {profile.education.length > 0 ? (
+                <>
+                  {profile.education.map((education) => (
+                    <ProfileEducation
+                      key={education._id}
+                      expereince={education}
+                    />
+                  ))}
+                </>
+              ) : (
+                <h4>No education credentials</h4>
+              )}
+            </div>
           </div>
         </>
       )}
