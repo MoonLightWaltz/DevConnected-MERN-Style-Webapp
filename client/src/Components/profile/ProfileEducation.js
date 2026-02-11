@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import { format } from "date-fns";
 
-const ProfileEducation = ({
-  education: { school, degree, fieldofstudy, current, to, from, description },
-}) => {
+const ProfileEducation = ({ education }) => {
+  if (!education) return "No education entered";
+  const { school, from, to, degree, fieldofstudy, description } = education;
   return (
     <>
       <h3 className="text-dark">{school}</h3>
@@ -17,7 +17,7 @@ const ProfileEducation = ({
           <strong>Degree:</strong> {degree}
         </p>
         <p>
-          <strong>Field Of Studyt:</strong> {fieldofstudy}
+          <strong>Field Of Study:</strong> {fieldofstudy}
         </p>
         <p>
           <strong>Description</strong>
@@ -29,7 +29,7 @@ const ProfileEducation = ({
 };
 
 ProfileEducation.propTypes = {
-  education: PropTypes.array.isRequired,
+  education: PropTypes.object.isRequired,
 };
 
 export default ProfileEducation;
