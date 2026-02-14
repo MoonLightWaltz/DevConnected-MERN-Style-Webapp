@@ -6,7 +6,6 @@ import Spinner from "../Layout/Spinner";
 import { Link } from "react-router-dom";
 
 const ProfileGithub = ({ username, getGithubRepos, repos }) => {
-  console.log("GitHub username:", username);
   useEffect(() => {
     if (username) {
       getGithubRepos(username);
