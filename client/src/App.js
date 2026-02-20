@@ -16,6 +16,7 @@ import AddEducation from "./Components/profile-form.js/AddEducation";
 import Profiles from "./Components/profiles/Profiles";
 import Profile from "./Components/profile/Profile";
 import Posts from "./Components/posts/Posts";
+import Post from "./Components/post/Post";
 
 //Redux
 import { Provider } from "react-redux";
@@ -130,6 +131,15 @@ const App = () => {
                 element={
                   <section className="container">
                     <Posts />
+                  </section>
+                }
+              />
+
+              <Route
+                path="/posts/:id"
+                element={
+                  <section className="container">
+                    <Post />
                   </section>
                 }
               />
