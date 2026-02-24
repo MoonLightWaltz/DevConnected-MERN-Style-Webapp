@@ -6,23 +6,28 @@ import { getPost } from "../../action/post";
 import { useParams } from "react-router-dom";
 import PostItem from "../posts/PostItem";
 import { Link } from "react-router-dom";
+import CommentForm from "../post/CommentForm";
 
 const Post = ({ getPost, post: { post, loading } }) => {
   const { id } = useParams();
+
   useEffect(() => {
     getPost(id);
   }, [getPost, id]);
 
-  return loading || post === null ? (
-    <Spinner />
-  ) : (
-    <>
-      <Link to="/posts" className="btn">
-        Back to posts
-      </Link>
-      <PostItem post={post} showActions={false} />
-    </>
-  );
+  if (loading || (post === null && loading) || post === undefined) {
+    <Spinner />;
+  } else {
+    return (
+      <>
+        <Link to="/posts" className="btn">
+          Back to posts
+        </Link>
+        <PostItem post={post} showActions={false} />
+        <CommentForm postId={post._id} />
+      </>
+    );
+  }
 };
 
 Post.propTypes = {
