@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { addComment } from "../../action/post";
+import { Link } from "react-router-dom";
 
 const CommentForm = ({ postId, addComment }) => {
   const [text, setText] = useState("");
@@ -25,7 +26,9 @@ const CommentForm = ({ postId, addComment }) => {
             rows="5"
             placeholder="add a comment"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => {
+              setText(e.target.value);
+            }}
             required
           ></textarea>
           <input type="submit" className="btn btn-dark my-1" value="Submit" />
